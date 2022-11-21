@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LeaveManagementSystem.Models.Leave>
+
+@{
+	ViewBag.Title = "ViewAllLeave";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-xl-12 col-md-12 mb-12">
+	<div class="card border-left-primary shadow h-100 py-2">
+		<div class="card-body">
+			<div class="row no-gutters align-items-center">
+				<div class="col mr-2">
+					<div class="form-group col-md-6">
+						<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Leave List</div>
+					</div>
+					<table class="table">
+						<tr>
+							<th>
+								@Html.DisplayNameFor(model => model.Username)
+							</th>
+							<th>
+								@Html.DisplayNameFor(model => model.LeaveStartDate)
+							</th>
+							<th>
+								@Html.DisplayNameFor(model => model.LeaveEndDate)
+							</th>
+							<th>
+								@Html.DisplayNameFor(model => model.Reason)
+							</th>
+							<th>
+								@Html.DisplayNameFor(model => model.TotalLeaveDaysTaken)
+							</th>
+							<th>
+								@Html.DisplayNameFor(model => model.TotalLeaveLeft)
+							</th>							
+							<th>
+								@Html.DisplayNameFor(model => model.LeaveType)
+							</th>
+							<th></th>
+						</tr>
+
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>
+									@Html.DisplayFor(modelItem => item.Username)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.LeaveStartDate)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.LeaveEndDate)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.Reason)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.TotalLeaveDaysTaken)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.TotalLeaveLeft)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.LeaveType)
+								</td>
+
+							</tr>
+						}
+
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
