@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LeaveManagementSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Leave">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveStartDate" Type="DateTime" Precision="0" />
+    <Property Name="LeaveEndDate" Type="DateTime" Precision="0" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalLeaveDaysTaken" Type="Int32" />
+    <Property Name="TotalLeaveLeft" Type="Int32" />
+    <Property Name="ThemeColor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="IsFullDay" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LeaveType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="LeaveManagementSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Leaves" EntityType="Self.Leave" />
+  </EntityContainer>
+</Schema>
